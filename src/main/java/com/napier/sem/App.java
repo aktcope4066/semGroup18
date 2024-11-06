@@ -1,9 +1,10 @@
 package com.napier.sem;
 
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoCollection;
 import org.bson.Document;
+
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 
 public class App
 {
@@ -27,4 +28,5 @@ public class App
         Document myDoc = collection.find().first();
         System.out.println(myDoc.toJson());
     }
+
 }
