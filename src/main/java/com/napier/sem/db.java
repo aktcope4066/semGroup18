@@ -3,6 +3,11 @@ package com.napier.sem;
 import java.sql.Connection;
 
 public class db {
+
+    public static void printCountries(Object object) {
+        System.out.println("print country place holder");
+    }
+
     private Connection con = null;
 
     //try connect to db
