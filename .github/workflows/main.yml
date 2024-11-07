@@ -24,5 +24,14 @@ jobs:
         run: docker build -t se_methods .
       - name: Run image
         run: docker run --network se-methods --name semcontainer se_methods
+
+      - name: Unit Tests
+        run: mvn -Dtest=com.napier.sem.AppTest test
+      - name: Package and Run docker compose
+        run: |
+          mvn package -DskipTests
+          docker compose up --abort-on-container-exit
+          
       - name: view logs
         run: docker logs semcontainer
+

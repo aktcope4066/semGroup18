@@ -1,10 +1,13 @@
 package com.napier.sem;
 
+import java.util.ArrayList;
+
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.napier.sem.classes.Country;
 
 //------------
 
@@ -34,8 +37,15 @@ public class App
 
          db world = new db();
 
-         world.connect();
+        world.connect();
 
+        // test print countiesrssdgsdasd
+        ArrayList<Country> countries = new ArrayList<>();
+        countries.add(new Country("ABC", "SampleCountry", "Asia", "Southeast", 123456, "SampleCapital"));
+
+        //close the conenctuod
+        //world.close();
+        //clsoe mongo db
         //--------------------------------------
     }
 
