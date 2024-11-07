@@ -26,7 +26,7 @@ jobs:
         run: docker run --network se-methods --name semcontainer se_methods
 
       - name: Run Unit Tests
-        run: mvn -Dtest=com.napier.sem.AppTest test
+        run: mvn -Dtest=src\test\java\Tests.java2 test
       - name: Package and Run docker compose
         run: |
           mvn package -DskipTests
