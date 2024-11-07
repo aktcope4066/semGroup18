@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import com.napier.sem.classes.Country;
 import com.napier.sem.db;
 
-class testFramework {
+class Tests {
     static db Database;
 
     @BeforeAll
