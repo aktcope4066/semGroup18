@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-*As a member of the organization, I want to generate a report of the top 15 cities by population in a country. So that I can identify densely populated areas and prioritize local services.*
+*As a Regional Services Manager, I want to generate a report of the top 15 cities by population in a country, so that I can identify densely populated areas and prioritize the allocation of local services more effectively.*
 
 ### Scope
 
@@ -28,17 +28,17 @@
 
 ### Primary Actor
 
-*A member of the organization.*
+*A Regional Services Manager in the organization.*
 
 ### Trigger
 
-*A request for the report over the top N populated cities in the world is made by someone with access to the system.*
+*A request for the report over the top N populated cities in the world is made by  a Regional Services Manager in the organization.*
 
 ## MAIN SUCCESS SCENARIO
 
-1. The member requests the information from the system.
+1. The Regional Services Manager requests the information from the system.
 2. The system generates a report of compiled data over the top most N populated cities.
-3. The member reviews the complete report.
+3. The Manager reviews the complete report.
 
 ## EXTENSIONS
 
