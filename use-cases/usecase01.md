@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-*As a member of the organization, I want to obtain the population of people living in cities versus those not living in cities for each continent, so that I can better understand urban versus rural populations.*
+*As a Data Analyst, I want to obtain the population distribution of individuals living in cities versus those living in rural areas for each continent, so that I can gain insights into the urban versus rural population trends and inform data-driven decisions.*
 
 ### Scope
 
@@ -20,7 +20,7 @@
 
 ### Success End Condition
 
-*A report is generated for the member.*
+*A report is generated for the Data Analyst who is a member of the orgination.*
 
 ### Failed End Condition
 
@@ -36,9 +36,9 @@
 
 ## MAIN SUCCESS SCENARIO
 
-1. The member requests the information from the system.
+1. The Data Analyst requests the information from the system.
 2. The system generates a report of the compiled data over the population data for city vs rural areas by continent.
-3. The member reviews the complete report.
+3. The Data Analyst reviews the complete report and is able to make informed decisions.
 
 ## EXTENSIONS
 
