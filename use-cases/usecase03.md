@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-*As a member of the organization, I want to generate a report listing all countries in the world organized by population from largest to smallest, So that I can easily analyze population trends and identify highly populated nations.*
+*As a Policy Analyst, I want to generate a report listing all countries in the world organized by population, from largest to smallest, so that I can analyze population trends and identify the most highly populated nations to inform policy decisions.*
 
 ### Scope
 
@@ -28,17 +28,17 @@
 
 ### Primary Actor
 
-*A member of the organization.*
+*A Policy Analyst in the organization.*
 
 ### Trigger
 
-*A request for the report of the population of counties is made by someone with access to the system.*
+*A request for the report of the population of counties is made by a Policy Analyst.*
 
 ## MAIN SUCCESS SCENARIO
 
-1. The member requests the information from the system.
+1. The Policy Analyst requests the information from the system.
 2. The system generates a report of the population of counties in the world in descending order.
-3. The member reviews the complete report.
+3. The Analyst reviews the complete report.
 
 ## EXTENSIONS
 
