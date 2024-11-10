@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-*As a member of the organization, I want to generate a report of the top 5 most populated capital cities in the world. So that I can assess and write on the geographic differences of highly populated capital cities throughout the world.*
+*As a Global Affairs Analyst, I want to generate a report of the top 5 most populated capital cities in the world, so that I can assess and write about the geographic differences of highly populated capital cities across different regions.*
 
 ### Scope
 
@@ -28,17 +28,17 @@
 
 ### Primary Actor
 
-*A member of the organization.*
+*AGlobal Affairs Analyst in the organization.*
 
 ### Trigger
 
-*A request for a report of the top N most populated capital cities in the world is made by someone with access to the system.*
+*A request for a report of the top N most populated capital cities in the world is made by a Global Affairs Analyst.*
 
 ## MAIN SUCCESS SCENARIO
 
-1. The member requests the information from the system.
+1. The Global Affairs Analyst requests the information from the system.
 2. The system generates a report of compiled data of the top N most populated capital cities.
-3. The member reviews the complete report.
+3. The Analyst reviews the complete report.
 
 ## EXTENSIONS
 
