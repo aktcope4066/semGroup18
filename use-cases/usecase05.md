@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-*As a member of the organization, I want to retrieve the top 10 most populated countries in the world. So, I can focus on the countries that have the largest populations for human settlement research.*
+*As a Human Settlement Researcher, I want to retrieve the top 10 most populated countries in the world, so that I can focus on the nations with the largest populations for in-depth human settlement research and analysis.*
 
 ### Scope
 
@@ -28,17 +28,17 @@
 
 ### Primary Actor
 
-*A member of the organization.*
+*A Human Settlement Researcher in the organization.*
 
 ### Trigger
 
-*A request for a report of the top most N populated counties in the world  is made by someone with access to the system.*
+*A request for a report of the top most N populated counties in the world  is made by a Human Settlement Researcher.*
 
 ## MAIN SUCCESS SCENARIO
 
-1. The member requests the information from the system.
+1. The Human Settlement Researcher requests the information from the system.
 2. The system generates a report of the compiled data of the top most N populated counties.
-3. The member reviews the complete report.
+3. The researcher reviews the complete report.
 
 ## EXTENSIONS
 
