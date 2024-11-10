@@ -28,7 +28,7 @@
 
 ### Primary Actor
 
-*A member of the organization*
+*A Data Analyst in the organization*
 
 ### Trigger
 
