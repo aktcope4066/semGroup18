@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-*As a member of the organization, I want to generate a report showing the number of speakers of Chinese, English, Hindi, Spanish, and Arabic, including their percentage of the world population, so that I can analyze language distribution globally.*
+*As a Global Studies Researcher, I want to generate a report showing the number of speakers of Chinese, English, Hindi, Spanish, and Arabic, along with their percentage of the global population, so that I can analyze language distribution and its sociocultural impact worldwide.*
 
 ### Scope
 
@@ -20,7 +20,7 @@
 
 ### Success End Condition
 
-*A report is generated for the user.*
+*A report is generated for the Global Studies Researcher.*
 
 ### Failed End Condition
 
@@ -28,17 +28,17 @@
 
 ### Primary Actor
 
-*A member of the organization.*
+*A Global Studies Researcher*
 
 ### Trigger
 
-*A request for the report over the population of language speakers in the world is made by someone with access to the system.*
+*A request for the report over the population of language speakers in the world is made by a Global Studies Researcher.*
 
 ## MAIN SUCCESS SCENARIO
 
-1. The member requests the information from the system.
+1. The Global Studies Researcher requests the information from the system.
 2. The system generates a report of the compiled data on the population of different language speakers in the world.
-3. The member reviews the complete report.
+3. The researcher reviews the complete report.
 
 ## EXTENSIONS
 
