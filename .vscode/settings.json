@@ -45,7 +45,7 @@
     "java.format.settings.url": "https://path/to/your/formatting-rules.xml",
 
     // Maven build settings for Java (update the path to your Maven executable)
-    "maven.executable.path": "C:\\Users\\manik\\OneDrive\\Documents\\GitHub\\apache-maven-3.9.9\\bin\\mvn",
+    "maven.executable.path": "C:\\Users\\manik\\OneDrive\\Documents\\GitHub\\apache-maven-3.9.9/bin/mvn",
 
     // Docker settings (adjust as needed)
     "docker.dockerfilePath": "Dockerfile",
@@ -58,7 +58,7 @@
     "git.path": "C:\\path\\to\\git\\bin\\git.exe",
 
     // Java build configuration setting
-    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.configuration.updateBuildConfiguration": "automatic",
 
     // Set Maven view to flat layout
     "maven.view": "flat",
@@ -70,8 +70,13 @@
     "redhat.telemetry.enabled": true,
 
     // JDK Home path setting
-    "jdk.jdkhome": "c:\\Users\\manik\\OneDrive\\Documents\\GitHub\\oracle-Java-SE-JDK\\Oracle_JDK-23",
+    "jdk.jdkhome": "c:\\Users\\manik\\.jdks\\jdk-24",
 
     // Apply settings to all profiles
-    "workbench.settings.applyToAllProfiles": []
+    "workbench.settings.applyToAllProfiles": [
+        "maven.executable.path",
+        "jdk.jdkhome"
+    ],
+    "java.jdt.ls.java.home": "c:\\Users\\manik\\.jdks\\jdk-24",
+    "jdk.advanced.disable.projectSearchLimit": true
 }
