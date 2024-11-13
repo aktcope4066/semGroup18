@@ -70,13 +70,13 @@
     "redhat.telemetry.enabled": true,
 
     // JDK Home path setting
-    "jdk.jdkhome": "c:\\Users\\manik\\.jdks\\jdk-24",
+    "jdk.jdkhome": "c:\\Users\\Manik Khadiya\\.jdks\\jdk-24",
 
     // Apply settings to all profiles
     "workbench.settings.applyToAllProfiles": [
         "maven.executable.path",
         "jdk.jdkhome"
     ],
-    "java.jdt.ls.java.home": "c:\\Users\\manik\\.jdks\\jdk-24",
+    "java.jdt.ls.java.home": "C:\\Users\\Manik Khadiya\\.jdks\\jdk-24",
     "jdk.advanced.disable.projectSearchLimit": true
 }
