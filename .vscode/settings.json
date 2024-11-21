@@ -1,0 +1,82 @@
+{
+    // Controls the default formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // Format on save
+    "editor.formatOnSave": true,
+
+    // Enable/Disable code lens (displays inline information like references and tests)
+    "editor.codeLens": true,
+
+    // Enable linting for Python projects
+    "python.linting.enabled": true,
+
+    // Set the path for the Python interpreter (update this path as needed)
+    "python.pythonPath": "path/to/python",
+
+    // Configure terminal to use Git Bash on Windows
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+
+    // Specify Dockerfile language settings
+    "[dockerfile]": {
+        "editor.tabSize": 2
+    },
+
+    // Settings for C and Arduino (adjust paths as needed)
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "C:/Program Files/Arduino/hardware/tools/avr/**"
+    ],
+
+    // Configure Prettier for JSON formatting
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Enable Java auto-import and specify import order
+    "java.completion.importOrder": [
+        "java",
+        "javax",
+        "com",
+        "org"
+    ],
+
+    // Java formatting settings (optional, update URL if you have custom rules)
+    "java.format.settings.url": "https://path/to/your/formatting-rules.xml",
+
+    // Maven build settings for Java (update the path to your Maven executable)
+    "maven.executable.path": "C:\\Users\\manik\\OneDrive\\Documents\\GitHub\\apache-maven-3.9.9/bin/mvn",
+
+    // Docker settings (adjust as needed)
+    "docker.dockerfilePath": "Dockerfile",
+    "docker.composeFilePaths": [
+        "docker-compose.yml"
+    ],
+
+    // Git settings
+    "git.autofetch": true,
+    "git.path": "C:\\path\\to\\git\\bin\\git.exe",
+
+    // Java build configuration setting
+    "java.configuration.updateBuildConfiguration": "automatic",
+
+    // Set Maven view to flat layout
+    "maven.view": "flat",
+
+    // Theme settings
+    "workbench.colorTheme": "Default Dark+",
+
+    // Enable Red Hat telemetry
+    "redhat.telemetry.enabled": true,
+
+    // JDK Home path setting
+    "jdk.jdkhome": "c:\\Users\\Manik Khadiya\\.jdks\\jdk-24",
+
+    // Apply settings to all profiles
+    "workbench.settings.applyToAllProfiles": [
+        "maven.executable.path",
+        "jdk.jdkhome"
+    ],
+    "java.jdt.ls.java.home": "C:\\Users\\Manik Khadiya\\.jdks\\jdk-24",
+    "jdk.advanced.disable.projectSearchLimit": true
+}
