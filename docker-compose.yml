@@ -1,11 +1,9 @@
-version: '3'
+version: '3.8'
 
 services:
   app:
     build: .
     container_name: app
-    depends_on:
-      - world-db
 
   world-db:
     build: src/main/sql/world-db/.
@@ -14,6 +12,3 @@ services:
     restart: always
     ports:
       - "33060:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: group18
-      MYSQL_DATABASE: world  # This will create the 'world' database on startup

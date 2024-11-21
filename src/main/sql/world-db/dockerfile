@@ -12,7 +12,10 @@ COPY *.sql /tmp/
 COPY world.sql /docker-entrypoint-initdb.d
 
 # Set the root password
-ENV MYSQL_ROOT_PASSWORD group18
+ENV MYSQL_ROOT_PASSWORD=group18
 
 # Optional: Set the database to be created at startup
-ENV MYSQL_DATABASE world
+ENV MYSQL_DATABASE=world
+
+# You can set the authentication plugin directly in a custom configuration file
+# Remove any invalid CMD with --default-authentication-plugin
