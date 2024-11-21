@@ -1,4 +1,4 @@
-name: A workflow for my world DB App
+name: A workflow for my Hello World App
 on: push
 
 jobs:
