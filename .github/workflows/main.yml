@@ -13,11 +13,10 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-
       - name: Run Unit Tests
         run: mvn -Dtest=AppTest -DfailIfNoTests=false test
 
-      IntegrationTests:
+  integration-tests:
     name: Integration Tests
     runs-on: ubuntu-20.04
     steps:
@@ -37,13 +36,10 @@ jobs:
           mvn -Dtest=com.napier.sem.AppIntegrationTest test
           docker stop employees
           docker rm employees
-          docker image rm database                   
-      
+          docker image rm database      
       - name: Package and Run docker compose
         run: |
           mvn package -DskipTests
-          docker compose up --abort-on-container-exit
-
-      - name: view logs
+          docker-compose up --abort-on-container-exit
+      - name: View logs
         run: docker logs world-db
-
