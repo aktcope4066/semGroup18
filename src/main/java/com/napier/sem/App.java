@@ -47,9 +47,10 @@ public class App {
                     Thread.sleep(delay);
                 }
                 con = DriverManager.getConnection(
-                    "jdbc:mysql://" + location + "/employees?allowPublicKeyRetrieval=true&useSSL=false",
-                    "root", "example");
-                System.out.println("Successfully connected");
+                "jdbc:mysql://world-db:3306/world?allowPublicKeyRetrieval=true&useSSL=false", 
+                "root", 
+                "group18"  // make sure this matches the MYSQL_ROOT_PASSWORD in the Dockerfile
+                );
                 break;
             } catch (SQLException sqle) {
                 System.out.println("Failed to connect to database attempt " + i);
