@@ -7,70 +7,69 @@ import java.util.ArrayList;
 
 import com.napier.sem.classes.Country;
 
-//------------
+public class App {
+    private Connection con = null;
 
-public class App
-{
-    public static void main(String[] args)
-    {
-        {
-            try
-            {
-                // Load Database driver
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            }
-            catch (ClassNotFoundException e)
-            {
-                System.out.println("Could not load SQL driver");
-                System.exit(-1);
-            }
+    public static void main(String[] args) {
+        App app = new App();
 
-            // Connection to the database
-            Connection con = null;
-            int retries = 100;
-            for (int i = 0; i < retries; ++i)
-            {
-                System.out.println("Connecting to database...");
-                try
-                {
-                    // Wait a bit for db to start
-                    Thread.sleep(30000);
-                    // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://world-db:3306/world?useSSL=false", "root", "group18");
-                    System.out.println("Successfully connected");
-                    // Wait a bit
-                    Thread.sleep(10000);
-                    // Exit for loop
-                    break;
-                }
-                catch (SQLException sqle)
-                {
-                    System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                    System.out.println(sqle.getMessage());
-                }
-                catch (InterruptedException ie)
-                {
-                    System.out.println("Thread interrupted? Should not happen.");
-                }
-            }
-
-            if (con != null)
-            {
-                try
-                {
-                    // Close connection
-                    con.close();
-                }
-                catch (Exception e)
-                {
-                    System.out.println("Error closing connection to database");
-                }
-            }
+        if (args.length == 2) {
+            app.connect(args[0], Integer.parseInt(args[1]));
+        } else {
+            app.connect("localhost:33060", 10000);
         }
-        // test print countiesrssdgsdasd
+
+        // Test print countries
         ArrayList<Country> countries = new ArrayList<>();
         countries.add(new Country("ABC", "SampleCountry", "Asia", "Southeast", 123456, "SampleCapital"));
+        for (Country c : countries) {
+            System.out.println(c.toString());
+        }
 
+        // Disconnect from database
+        app.disconnect();
     }
 
+    public void connect(String location, int delay) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Could not load SQL driver");
+            System.exit(-1);
+        }
+
+        int retries = 5;
+        boolean shouldWait = false;
+        for (int i = 0; i < retries; ++i) {
+            System.out.println("Connecting to database...");
+            try {
+                if (shouldWait) {
+                    Thread.sleep(delay);
+                }
+                con = DriverManager.getConnection(
+                    "jdbc:mysql://" + location + "/employees?allowPublicKeyRetrieval=true&useSSL=false",
+                    "root", "example");
+                System.out.println("Successfully connected");
+                break;
+            } catch (SQLException sqle) {
+                System.out.println("Failed to connect to database attempt " + i);
+                System.out.println(sqle.getMessage());
+                shouldWait = true;
+            } catch (InterruptedException ie) {
+                System.out.println("Thread interrupted? Should not happen.");
+            }
+        }
+    }
+
+    public void disconnect() {
+        try {
+            if (con != null && !con.isClosed()) {
+                con.close();
+                System.out.println("Disconnected from database");
+            }
+        } catch (SQLException e) {
+            System.out.println("Failed to disconnect from database");
+            System.out.println(e.getMessage());
+        }
+    }
 }
