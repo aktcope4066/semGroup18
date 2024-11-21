@@ -33,7 +33,7 @@ jobs:
         run: ls -R
       - name: Integration Tests
         run: |
-          docker build -t database ./src/main/sql/queries/world-db 
+          docker build -t database ./src/main/sql/world-db 
           docker run --name employees -dp 33060:3306 database
           mvn -Dtest=com.napier.sem.AppIntegrationTest test
           docker stop employees
