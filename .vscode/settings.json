@@ -45,7 +45,7 @@
     "java.format.settings.url": "https://path/to/your/formatting-rules.xml",
 
     // Maven build settings for Java (update the path to your Maven executable)
-    "maven.executable.path": "C:\\Users\\manik\\OneDrive\\Documents\\GitHub\\apache-maven-3.9.9/bin/mvn",
+    "maven.executable.path": "C:\\Users\\Manik Khadiya\\OneDrive\\Documents\\GitHub\\apache-maven-3.9.9/bin/mvn",
 
     // Docker settings (adjust as needed)
     "docker.dockerfilePath": "Dockerfile",
@@ -77,6 +77,6 @@
         "maven.executable.path",
         "jdk.jdkhome"
     ],
-    "java.jdt.ls.java.home": "C:\\Users\\manik\\.jdks\\jdk-24",
+    "java.jdt.ls.java.home": "C:\\Users\\Manik Khadiya\\.jdks\\jdk-24",
     "jdk.advanced.disable.projectSearchLimit": true
 }
