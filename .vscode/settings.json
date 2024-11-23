@@ -12,7 +12,7 @@
     "python.linting.enabled": true,
 
     // Set the path for the Python interpreter (update this path as needed)
-    "python.pythonPath": "path/to/python",
+    "python.pythonPath": "C:\\Users\\Manik Khadiya\\AppData\\Local\\Programs\\Python\\Python312",
 
     // Configure terminal to use Git Bash on Windows
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
@@ -55,7 +55,7 @@
 
     // Git settings
     "git.autofetch": true,
-    "git.path": "C:\\path\\to\\git\\bin\\git.exe",
+    "git.path": "C:\\Program Files\\Git\\bin\\git.exe",
 
     // Java build configuration setting
     "java.configuration.updateBuildConfiguration": "automatic",
