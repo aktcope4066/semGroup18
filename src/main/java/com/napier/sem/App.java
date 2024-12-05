@@ -11,15 +11,7 @@ public class App {
         // Connect to database
         a.connect();
 
-        // Disconnect from database
-        a.disconnect();
-
     }
-
-    /**
-     * Connection to MySQL database.
-     */
-    private Connection con = null;
 
     /**
      * Connect to the MySQL database.
@@ -33,6 +25,8 @@ public class App {
             System.exit(-1);
         }
 
+        //Connect to the database
+        Connection con = null;
         int retries = 10;
         for (int i = 0; i < retries; ++i) {
             System.out.println("Connecting to database...");
@@ -42,6 +36,8 @@ public class App {
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", "group18");
                 System.out.println("Successfully connected");
+                // Wait a bit
+                Thread.sleep(30000);
                 break;
             } catch (SQLException sqle) {
                 System.out.println("Failed to connect to database attempt " + Integer.toString(i));
@@ -50,12 +46,7 @@ public class App {
                 System.out.println("Thread interrupted? Should not happen.");
             }
         }
-    }
-
-    /**
-     * Disconnect from the MySQL database.
-     */
-    public void disconnect() {
+        //Disconnect from MySQL DB
         if (con != null) {
             try {
                 // Close connection

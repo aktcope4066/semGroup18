@@ -1,13 +1,21 @@
-# Use the MySQL image version 8.3 (allows native password plugin)
+# Use the latest MySQL image
 FROM mysql:8.3
+
 # Set the working directory
 WORKDIR /tmp
-# Copy all the files to the working directory of the container
-COPY world-db/*.sql /tmp/
-COPY world-db/*.dump /tmp/
+
+# Copy SQL files to the working directory of the container
+COPY *.sql /tmp/
+
 # Copy the main SQL file to docker-entrypoint-initdb.d.
 # Scripts and SQL files in this folder are executed on container startup.
-# This is specific to MySQL.
-COPY world-db/world.sql /docker-entrypoint-initdb.d
+COPY world.sql /docker-entrypoint-initdb.d
+
 # Set the root password
-ENV MYSQL_ROOT_PASSWORD group18
+ENV MYSQL_ROOT_PASSWORD=group18
+
+# Optional: Set the database to be created at startup
+ENV MYSQL_DATABASE=world
+
+# You can set the authentication plugin directly in a custom configuration file
+# Remove any invalid CMD with --default-authentication-plugin
