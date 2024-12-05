@@ -1,4 +1,4 @@
-# USE CASE: 08 Obtain top N populated capital cities.
+# USE CASE: 08 Obtain top n populated capital cities.
 
 ## CHARACTERISTIC INFORMATION
 
@@ -32,12 +32,12 @@
 
 ### Trigger
 
-*A request for a report of the top N most populated capital cities in the world is made by a Global Affairs Analyst.*
+*A request for a report of the top n most populated capital cities in the world is made by a Global Affairs Analyst.*
 
 ## MAIN SUCCESS SCENARIO
 
 1. The Global Affairs Analyst requests the information from the system.
-2. The system generates a report of compiled data of the top N most populated capital cities.
+2. The system generates a report of compiled data of the top n most populated capital cities.
 3. The Analyst reviews the complete report.
 
 ## EXTENSIONS
@@ -46,8 +46,8 @@ None.
 
 ## SUB-VARIATIONS
 
-1. The top N populated capital cities in a continent where N is provided by the user.
-2. The top N populated capital cities in a region where N is provided by the user.
+1. The top n populated capital cities in a continent where n is provided by the user.
+2. The top n populated capital cities in a region where n is provided by the user.
 
 
 ## SCHEDULE

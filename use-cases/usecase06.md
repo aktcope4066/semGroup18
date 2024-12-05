@@ -1,4 +1,4 @@
-# USE CASE: 06 Obtain top N populated cities.
+# USE CASE: 06 Obtain top n populated cities.
 
 ## CHARACTERISTIC INFORMATION
 
@@ -32,12 +32,12 @@
 
 ### Trigger
 
-*A request for the report over the top N populated cities in the world is made by  a Regional Services Manager in the organization.*
+*A request for the report over the top n populated cities in the world is made by  a Regional Services Manager in the organization.*
 
 ## MAIN SUCCESS SCENARIO
 
 1. The Regional Services Manager requests the information from the system.
-2. The system generates a report of compiled data over the top most N populated cities.
+2. The system generates a report of compiled data over the top most n populated cities.
 3. The Manager reviews the complete report.
 
 ## EXTENSIONS
@@ -46,10 +46,10 @@ None.
 
 ## SUB-VARIATIONS
 
-1. The top N populated cities in a continent where N is provided by the user.
-2. The top N populated cities in a region where N is provided by the user.
-3. The top N populated cities in a country where N is provided by the user.
-4. The top N populated cities in a district where N is provided by the user.
+1. The top n populated cities in a continent where n is provided by the user.
+2. The top n populated cities in a region where n is provided by the user.
+3. The top n populated cities in a country where n is provided by the user.
+4. The top n populated cities in a district where n is provided by the user.
 
 
 ## SCHEDULE

@@ -6,7 +6,7 @@ public class languageQuery {
         "   ROUND((SUM(countryLanguage.Percentage / 100 * country.Population) / (SELECT SUM(Population) FROM country)) * 100, 2)" +
         "FROM countryLanguage " + 
         "JOIN country ON countryLanguage.CountryCode = country.Code" +
-        "WHERE countryLanguage.Languages IN ('Chinese', 'Hindi', 'Spanish', 'English', 'Arabic') " + 
+        "WHERE countryLanguage.Languages IN ('Chinese', 'English', 'Hindi', 'Spanish', 'Arabic') " + 
         "GROUP BY countryLanguage.Language " +
         "ORDER BY Population DESC";
 }

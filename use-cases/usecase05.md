@@ -1,4 +1,4 @@
-# USE CASE: 05 Obtain top N populated counties.
+# USE CASE: 05 Obtain top n populated counties.
 
 ## CHARACTERISTIC INFORMATION
 
@@ -32,12 +32,12 @@
 
 ### Trigger
 
-*A request for a report of the top most N populated counties in the world  is made by a Human Settlement Researcher.*
+*A request for a report of the top most n populated counties in the world  is made by a Human Settlement Researcher.*
 
 ## MAIN SUCCESS SCENARIO
 
 1. The Human Settlement Researcher requests the information from the system.
-2. The system generates a report of the compiled data of the top most N populated counties.
+2. The system generates a report of the compiled data of the top most n populated counties.
 3. The researcher reviews the complete report.
 
 ## EXTENSIONS
@@ -46,8 +46,8 @@ None.
 
 ## SUB-VARIATIONS
 
-1. The top N populated countries in a continent where N is provided by the user.
-2. The top N populated countries in a region where N is provided by the user.
+1. The top n populated countries in a continent where n is provided by the user.
+2. The top n populated countries in a region where n is provided by the user.
 
 
 ## SCHEDULE
