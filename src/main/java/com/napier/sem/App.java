@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import com.napier.sem.classes.*;
 import sql.queries.*;
@@ -24,6 +25,16 @@ public class App
         } else {
             // Use the arguments for connecting to the DB
             db.connect(args[0]);  // The first argument should be the URL (host:port)
+        }
+
+        // Allow the user to input a custom value for 'n'
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of countries to retrieve: ");
+    
+        if (scanner.hasNextInt()) {
+            n = scanner.nextInt();
+        } else {
+            System.out.println("Invalid input using default value of " + n);
         }
 
         // Get top n populated countries in the world
