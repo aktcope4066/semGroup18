@@ -11,59 +11,31 @@ public class db {
     private Connection con = null;
 
     //try connect to db
-    public void connect(String location, int delay){
+    public void connect(String dbURL) {
+        // Default timeout value if not passed from main()
+        int timeout = 10000;  // 10 seconds timeout for connection
+    
         try {
-            // Load Database driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Could not load SQL driver");
-            System.exit(-1);
-        }
-
-        //num of retries
-        int retry = 2;
-        boolean Wait = false;
-        //
-        for (int i = 0; i < retry; ++i) {
-            System.out.println("Connecting to database...");
-            try {
-                if (Wait) {
-                    // Wait abit for db
-                    Thread.sleep(delay);
-                }
-
-                // Connect to db
-                con = DriverManager.getConnection("jdbc:mysql://" + location
-                                + "/world?allowPublicKeyRetrieval=true&useSSL=false",
-                        "root", "group18");
-                System.out.println("Successfully connected");
-                break;
-            } catch (SQLException sqle) {
-                System.out.println("Failed to connect to database attempt " + i);
-                System.out.println(sqle.getMessage());
-
-                //wait before attempting to reconnect
-                Wait = true;
-            } catch (InterruptedException ie) {
-                System.out.println("Thread interrupted? Should not happen.");
-            }
+            // Code to connect to the database, using the dbURL
+            String url = "jdbc:mysql://" + dbURL;  // Format the URL properly
+            con = DriverManager.getConnection(url, "root", "group18");
+            System.out.println("Connected to database successfully.");
+        } catch (SQLException e) {
+            System.out.println("Failed to connect to database.");
+            e.printStackTrace();
         }
     }
-    public void disconnect()
-    {
-        if (con != null)
-        {
-            try
-            {
-                // Close connection
+    
+    // Disconnect from the database
+    public void disconnect() {
+        try {
+            if (con != null && !con.isClosed()) {
                 con.close();
+                System.out.println("Disconnected from database.");
             }
-            catch (Exception e)
-            {
-                System.out.println("Error closing connection to database");
-            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
     }
     // Methods for creating Country Reports - (Matches Point 1 from spec)
 

@@ -4,7 +4,7 @@ services:
     container_name: app
 
   world-db:
-    build: src/main/sql/world-db/.
+    build: src/main/java/sql/world-db/.
     container_name: world-db
     command: --default-authentication-plugin=mysql_native_password
     restart: always

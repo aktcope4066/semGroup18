@@ -19,9 +19,11 @@ public class App
 
         // Connect to the database
         if (args.length < 1) {
-            db.connect("localhost:33060", 10000);  // default DB location
+            // Default connection string and port, no timeout argument
+            db.connect("localhost:33060");  // Use default DB location (host:port)
         } else {
-            db.connect(args[0], Integer.parseInt(args[1]));  // if arguments provided
+            // Use the arguments for connecting to the DB
+            db.connect(args[0]);  // The first argument should be the URL (host:port)
         }
 
         // Get top n populated countries in the world
@@ -46,15 +48,13 @@ public class App
         db.printCountries(countries3);
 
         // Get the number of people who speak specific languages
-    System.out.println("______________________________________________________________________________________________________________");
-    System.out.println("The number of people who speak the following languages: Chinese, English, Hindi, Spanish, Arabic");
-    System.out.println("______________________________________________________________________________________________________________");
-    ArrayList<Language> languageReport = db.getOfficialLanguagesForCountry(languageQuery.LanguageQuery);  // Use the query defined in languageQuery class
-    db.printLanguage(languageReport);
-
+        System.out.println("______________________________________________________________________________________________________________");
+        System.out.println("The number of people who speak the following languages: Chinese, English, Hindi, Spanish, Arabic");
+        System.out.println("______________________________________________________________________________________________________________");
+        ArrayList<Language> languageReport = db.getOfficialLanguagesForCountry(languageQuery.LanguageQuery);  // Use the query defined in languageQuery class
+        db.printLanguage(languageReport);
 
         // Disconnect from the database
         db.disconnect();
     }
-
 }
