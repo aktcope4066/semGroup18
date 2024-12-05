@@ -1,3 +1,5 @@
+package com.napier.sem;
+
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeAll;

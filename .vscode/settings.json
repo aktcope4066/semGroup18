@@ -12,7 +12,7 @@
     "python.linting.enabled": true,
 
     // Set the path for the Python interpreter (update this path as needed)
-    "python.pythonPath": "path/to/python",
+    "python.pythonPath": "C:\\Users\\Manik Khadiya\\AppData\\Local\\Programs\\Python\\Python312",
 
     // Configure terminal to use Git Bash on Windows
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
@@ -45,7 +45,7 @@
     "java.format.settings.url": "https://path/to/your/formatting-rules.xml",
 
     // Maven build settings for Java (update the path to your Maven executable)
-    "maven.executable.path": "C:\\Users\\manik\\OneDrive\\Documents\\GitHub\\apache-maven-3.9.9/bin/mvn",
+    "maven.executable.path": "C:\\Users\\Manik Khadiya\\OneDrive\\Documents\\GitHub\\apache-maven-3.9.9/bin/mvn",
 
     // Docker settings (adjust as needed)
     "docker.dockerfilePath": "Dockerfile",
@@ -55,7 +55,7 @@
 
     // Git settings
     "git.autofetch": true,
-    "git.path": "C:\\path\\to\\git\\bin\\git.exe",
+    "git.path": "C:\\Program Files\\Git\\bin\\git.exe",
 
     // Java build configuration setting
     "java.configuration.updateBuildConfiguration": "automatic",
