@@ -4,7 +4,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.swing.plaf.synth.Region;
+
 import com.napier.sem.classes.*;
+
 import sql.queries.*;
 
 public class db {
@@ -53,29 +56,36 @@ public class db {
             System.out.println("Language: " + language.getLanguage() + ", Speakers: " + language.getPercentage());
         }
     }
-    
+
     // 1. Retrieve a list of countries sorted by population (Descending)
-    public ArrayList<Country> getAllCountriesSortedByPopulation(int n) {
+    public ArrayList<Country> getAllCountriesSortedByPopulation(String baseQuery, int n) {
         ArrayList<Country> countries = new ArrayList<>();
-        String query = "SELECT country.Name, country.Population, city.Name AS Capital " +
-                       "FROM country " +
-                       "JOIN city ON country.Capital = city.ID " +
-                       "ORDER BY country.Population DESC " +
-                       "LIMIT ?"; // To limit the result based on 'n'
-    
-        try (PreparedStatement stmt = con.prepareStatement(query)) {
-            stmt.setInt(1, n);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    Country country = new Country();
-                    country.setName(rs.getString("Name"));
-                    country.setPopulation(rs.getInt("Population"));
-                    country.setCapital(rs.getString("Capital"));
-                    countries.add(country);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        try {
+            // Create an SQL statement
+        Statement stmt = con.createStatement();
+        // Create string for SQL statement
+        String strSelect = baseQuery + " ORDER BY Population DESC";
+
+        //if N <= 0 then set no limit
+        if(n>0) {
+            strSelect = strSelect + " LIMIT " + n;
+        }
+        // Execute SQL statement
+        ResultSet rset = stmt.executeQuery(strSelect);
+        //Extract country information
+        //ArrayList<Country> country = new ArrayList<Country>();
+        while (rset.next()) {
+            Country country = new Country();
+            country.setCode(rset.getString("Code"));
+            country.setName(rset.getString("Name"));
+            country.setContinent(rset.getString("Continent"));
+            country.setRegion(rset.getString("Region"));
+            country.setPopulation(rset.getInt("Population"));
+            country.setCapital(rset.getString("Capital"));
+            countries.add(country);
+        }
+        } catch (Exception e) {
+        e.printStackTrace();
         }
         return countries;
     }

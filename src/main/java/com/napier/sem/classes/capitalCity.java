@@ -1,5 +1,6 @@
 package com.napier.sem.classes;
 //class for capitakl city
+//might not need anymore
 public class capitalCity {
     private String name;
     private String country;

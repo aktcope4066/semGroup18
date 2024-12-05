@@ -30,7 +30,7 @@ public class App
         System.out.println("___________________________________________________________________________");
         System.out.println("The top n populated countries in the world where n is provided by the user.");
         System.out.println("___________________________________________________________________________");
-        ArrayList<Country> countries = db.getAllCountriesSortedByPopulation(n);
+        ArrayList<Country> countries = db.getAllCountriesSortedByPopulation(countryQuery.baseQuery, n);
         db.printCountries(countries);
 
         // Get top n populated countries in a specific region (e.g., North America)
