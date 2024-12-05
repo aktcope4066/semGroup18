@@ -77,6 +77,6 @@
         "maven.executable.path",
         "jdk.jdkhome"
     ],
-    "java.jdt.ls.java.home": "C:\\Users\\Manik Khadiya\\.jdks\\jdk-24",
+    "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-23",
     "jdk.advanced.disable.projectSearchLimit": true
 }
