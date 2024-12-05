@@ -121,6 +121,42 @@ public class db {
         }
         return cities;
     }
+//capital cities query area
+
+public ArrayList<City> getTopNPopulatedCapitalCities(String baseQuery, int n) {
+    ArrayList<City> cities = new ArrayList<>();
+    try {
+        // Create an SQL statement
+        Statement stmt = con.createStatement();
+        // Build the query dynamically
+        String strSelect = baseQuery + 
+                           cityQuery.capitalCity() + " " + //only select capital cities
+                           "ORDER BY city.Population DESC";
+        
+        // Apply LIMIT if N > 0
+        if (n > 0) {
+            strSelect += " LIMIT " + n;
+        }
+
+        // Execute the SQL statement
+        ResultSet rset = stmt.executeQuery(strSelect);
+
+        // Extract city information from the result set
+        while (rset.next()) {
+            City city = new City();
+            city.setId(rset.getInt("ID"));
+            city.setName(rset.getString("Name"));
+            city.setCountryCode(rset.getString("CountryCode"));
+            city.setDistrict(rset.getString("District"));
+            city.setPopulation(rset.getInt("Population"));
+            cities.add(city);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return cities;
+}
+
 
     // 3. Retrieve population of each continent
     public HashMap<String, Long> getPopulationByContinent() {

@@ -16,7 +16,7 @@ public class App
 {
     public static void main(String[] args) {
         db db = new db();
-        int n = 5;  // The number of countries or languages to retrieve
+        int n = 0;  // The number of countries or languages to retrieve 0 is all
 
         // Connect to the database
         if (args.length < 1) {
@@ -29,7 +29,7 @@ public class App
 
         // Allow the user to input a custom value for 'n'
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the number of countries to retrieve: ");
+        System.out.print("Enter the number of countries to retrieve(0 for all): ");
     
         if (scanner.hasNextInt()) {
             n = scanner.nextInt();

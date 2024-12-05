@@ -26,4 +26,9 @@ public class cityQuery {
     public static String district(String districtName) {
         return "WHERE city.District = '" + districtName + "'";
     }
+
+    // Method for WHERE clause for capital cities (important for queries that need capitals)
+    public static String capitalCity() {
+        return "WHERE city.ID = country.Capital";
+    }
 }

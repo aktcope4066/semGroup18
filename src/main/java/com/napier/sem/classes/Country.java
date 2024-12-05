@@ -6,19 +6,13 @@ public class Country {
     private String name;
     private String continent;
     private String region;
-    private double surfaceArea;
     private int population;
-    private double lifeExpectancy;
-    private double gnp;
-    private double gnpOld;
-    private String localName;
-    private String governmentForm;
-    private String headOfState;
     private String capital;
-    private String code2;
 
-    /* Constructor
-    public Country(String code, String name, String continent, String region, int population, int capital) {
+    // Construct
+    public Country() {}
+
+    public Country(String code, String name, String continent, String region, int population, String capital) {
         this.code = code;
         this.name = name;
         this.continent = continent;
@@ -26,7 +20,7 @@ public class Country {
         this.population = population;
         this.capital = capital;
     }
-    */
+    
     // Getters and setters
     public String getCode() { return code; }
     public void setCode(String code) { this.code = code; }
@@ -40,33 +34,9 @@ public class Country {
     public String getRegion() { return region; }
     public void setRegion(String region) { this.region = region; }
 
-    public double getSurfaceArea() { return surfaceArea; }
-    public void setSurfaceArea(double surfaceArea) { this.surfaceArea = surfaceArea; }
-
     public int getPopulation() { return population; }
     public void setPopulation(int population) { this.population = population; }
 
-    public double getLifeExpectancy() { return lifeExpectancy; }
-    public void setLifeExpectancy(double lifeExpectancy) { this.lifeExpectancy = lifeExpectancy; }
-
-    public double getGnp() { return gnp; }
-    public void setGnp(double gnp) { this.gnp = gnp; }
-
-    public double getGnpOld() { return gnpOld; }
-    public void setGnpOld(double gnpOld) { this.gnpOld = gnpOld; }
-
-    public String getLocalName() { return localName; }
-    public void setLocalName(String localName) { this.localName = localName; }
-
-    public String getGovernmentForm() { return governmentForm; }
-    public void setGovernmentForm(String governmentForm) { this.governmentForm = governmentForm; }
-
-    public String getHeadOfState() { return headOfState; }
-    public void setHeadOfState(String headOfState) { this.headOfState = headOfState; }
-
     public String getCapital() { return capital; }
     public void setCapital(String capital) { this.capital = capital; }
-
-    public String getCode2() { return code2; }
-    public void setCode2(String code2) { this.code2 = code2; }
 }
