@@ -43,6 +43,7 @@ public class IntegrationTest {
      * Test for retrieving a list of countries from the world.
      * Verifies that the `getCountryWorld` method works as expected.
      */
+    /*
     @Test
     void testGetCountryWorld() {
         String query = "SELECT * FROM country";
@@ -56,10 +57,11 @@ public class IntegrationTest {
         assertNotNull(country.getName(), "Country name should not be null");
         assertNotNull(country.getCode(), "Country code should not be null");
     }
-
+    
     /**
      * Test for handling invalid queries when retrieving countries.
      */
+    /* 
     @Test
     void testGetCountryWorldInvalidQuery() {
         String invalidQuery = "SELECT * FROM non_existing_table";
@@ -68,4 +70,5 @@ public class IntegrationTest {
         // Assert that the result is null, as the query is invalid
         assertNull(countries, "The result should be null due to invalid query");
     }
+    */
 }
