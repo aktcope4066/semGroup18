@@ -49,6 +49,13 @@ public class db {
         }
     }
 
+    // Method to print list of cities
+    public static void printCities(ArrayList<City> cities) {
+        for (City city : cities) {
+            System.out.println("City: " + City.getName() + ", Population: " + City.getPopulation());
+        }
+    }
+
     //print lang stats
     public static void printLanguage(ArrayList<Language> languageReport) {
         for (Language language : languageReport) {
@@ -158,7 +165,7 @@ public ArrayList<City> getTopNPopulatedCapitalCities(String baseQuery, int n) {
 }
 
 
-    // 3. Retrieve population of each continent
+    //population of each continent
     public HashMap<String, Long> getPopulationByContinent() {
         HashMap<String, Long> populationByContinent = new HashMap<>();
         String query = "SELECT Continent, SUM(Population) AS total_population FROM country GROUP BY Continent";
@@ -176,30 +183,7 @@ public ArrayList<City> getTopNPopulatedCapitalCities(String baseQuery, int n) {
         return populationByContinent;
     }
 
-    // 4. Retrieve a list of countries with a population greater than a specified value
-    public ArrayList<Country> getCountriesWithPopulationGreaterThan(int minPopulation) {
-        ArrayList<Country> countries = new ArrayList<>();
-        String query = "SELECT Code, Name, Continent, Region, Population FROM country WHERE Population > ?";
-        try {
-            PreparedStatement stmt = con.prepareStatement(query);
-            stmt.setInt(1, minPopulation);
-            ResultSet rs = stmt.executeQuery();
-            while (rs.next()) {
-                Country country = new Country();
-                country.setCode(rs.getString("Code"));
-                country.setName(rs.getString("Name"));
-                country.setContinent(rs.getString("Continent"));
-                country.setRegion(rs.getString("Region"));
-                country.setPopulation(rs.getInt("Population"));
-                countries.add(country);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return countries;
-    }
-    
-    // 9. Retrieve official languages of a country
+    //Retrieve official languages of a country
     public ArrayList<Language> getOfficialLanguagesForCountry(String query) {
         ArrayList<Language> languages = new ArrayList<>();
         try (PreparedStatement stmt = con.prepareStatement(query)) {

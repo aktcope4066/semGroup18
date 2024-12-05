@@ -44,19 +44,12 @@ public class App
         ArrayList<Country> countries = db.getAllCountriesSortedByPopulation(countryQuery.baseQuery, n);
         db.printCountries(countries);
 
-        // Get top n populated countries in a specific region (e.g., North America)
-        System.out.println("__________________________________________________________________________");
-        System.out.println("The top n populated countries in a region where n is provided by the user.");
-        System.out.println("__________________________________________________________________________");
-        ArrayList<Country> countries2 = db.getCountriesWithPopulationGreaterThan(50000000);  // Example logic, update for region if needed
-        db.printCountries(countries2);
-
-        // Get top n populated countries in a specific continent (e.g., Asia)
-        System.out.println("_____________________________________________________________________________");
-        System.out.println("The top n populated countries in a continent where n is provided by the user.");
-        System.out.println("_____________________________________________________________________________");
-        ArrayList<Country> countries3 = db.getCountriesWithPopulationGreaterThan(100000000);  // Example logic, update for continent if needed
-        db.printCountries(countries3);
+        // Get top n populated cap cities in the world
+        System.out.println("___________________________________________________________________________");
+        System.out.println("The top n populated countries in the world where n is provided by the user.");
+        System.out.println("___________________________________________________________________________");
+        ArrayList<Country> cities = db.getTopNPopulatedCapitalCities(cityQuery.baseQuery, n);
+        db.printCountries(cities);
 
         // Get the number of people who speak specific languages
         System.out.println("______________________________________________________________________________________________________________");
