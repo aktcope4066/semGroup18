@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.napier.sem.classes.Country;
+import com.napier.sem.classes.*;
+import main.sql.queries.*;
+import com.napier.sem.db;
 
 //------------
 
@@ -13,64 +15,52 @@ public class App
 {
     public static void main(String[] args)
     {
-        {
-            try
-            {
-                // Load Database driver
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            }
-            catch (ClassNotFoundException e)
-            {
-                System.out.println("Could not load SQL driver");
-                System.exit(-1);
-            }
+        db db = new db();
+        //no of couuntries or whatever
+        int n = 5;
 
-            // Connection to the database
-            Connection con = null;
-            int retries = 100;
-            for (int i = 0; i < retries; ++i)
-            {
-                System.out.println("Connecting to database...");
-                try
-                {
-                    // Wait a bit for db to start
-                    Thread.sleep(30000);
-                    // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://world-db:3306/world?useSSL=false", "root", "group18");
-                    System.out.println("Successfully connected");
-                    // Wait a bit
-                    Thread.sleep(10000);
-                    // Exit for loop
-                    break;
-                }
-                catch (SQLException sqle)
-                {
-                    System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                    System.out.println(sqle.getMessage());
-                }
-                catch (InterruptedException ie)
-                {
-                    System.out.println("Thread interrupted? Should not happen.");
-                }
-            }
-
-            if (con != null)
-            {
-                try
-                {
-                    // Close connection
-                    con.close();
-                }
-                catch (Exception e)
-                {
-                    System.out.println("Error closing connection to database");
-                }
-            }
+        //connect
+        if (args.length < 1) {
+            db.connect("localhost:33060", 10000);
+        } else {
+            db.connect(args[0], Integer.parseInt(args[1]));
         }
-        // test print countiesrssdgsdasd
-        ArrayList<Country> countries = new ArrayList<>();
-        countries.add(new Country("ABC", "SampleCountry", "Asia", "Southeast", 123456, "SampleCapital"));
 
+        //probs output below for the reports
+        System.out.println("___________________________________________________________________________");
+        System.out.println("The top N populated countries in the world where N is provided by the user.");
+        System.out.println("___________________________________________________________________________");
+        // Extract country information
+        ArrayList<Country> countries = db.getCountryWorld(countryQuery.countryQuery, n);
+        // out results
+        db.printCountries(countries);
+
+        System.out.println("__________________________________________________________________________");
+        System.out.println("The top N populated countries in a region where N is provided by the user.");
+        System.out.println("__________________________________________________________________________");
+        //Extract country information
+        ArrayList<Country> countries2 = db.getCountryRegion(countryQuery.countryQuery,n,"North America");
+        // out results
+        db.printCountries(countries2);
+
+        System.out.println("_____________________________________________________________________________");
+        System.out.println("The top N populated countries in a continent where N is provided by the user.");
+        System.out.println("_____________________________________________________________________________");
+        //Extract country information
+        ArrayList<Country> countries3 = db.getCountryContinent(countryQuery.countryQuery,n,"Asia");
+        // Display results
+        db.printCountries(countries3);
+
+        System.out.println("______________________________________________________________________________________________________________");
+        System.out.println("The number of people who speak the following the following languages: Chinese, English, Hindi, Spanish, Arabic");
+        System.out.println("______________________________________________________________________________________________________________");
+        //Extract country information
+        ArrayList<Language> languageReport = db.getLanguages(Language_queries.query);
+        // Display results
+        db.printLanguage(languageReport);
+
+        //dc
+        db.disconnect();
     }
 
 }

@@ -1,3 +1,4 @@
+package sql.queries;
 public class languageQuery {
     //query string that will be used in database methods for language reports
     public static String LanguageQuery = 

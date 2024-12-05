@@ -1,4 +1,6 @@
 //template for city queries - Manik
+package sql.queries;
+
 public class cityQuery {
     //query strings that will be used in database methods for city reports
 

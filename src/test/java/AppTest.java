@@ -17,7 +17,7 @@ class AppTest {
     @Test
     void printCountriesTestNull() {
         System.out.println("Testing printCountries with null input:");
-        Database.printCountries(null);
+        db.printCountries(null);
     }
 
     @Test
