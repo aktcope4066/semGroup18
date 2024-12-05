@@ -37,7 +37,7 @@ public class db {
             e.printStackTrace();
         }
     }
-    // Methods for creating Country Reports - (Matches Point 1 from spec)
+    // Methods for creating Country Reports
 
     // Method to print list of countries
     public static void printCountries(ArrayList<Country> countries) {
@@ -143,7 +143,6 @@ public class db {
         return countries;
     }
 
-    // Methods for updating the database (Matches Points 5-7 from spec)
 
     // 5. Insert a new country
     public boolean insertCountry(Country country) {
