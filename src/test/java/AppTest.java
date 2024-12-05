@@ -11,15 +11,14 @@ class AppTest {
 
     @BeforeAll
     static void init() {
-        Database = new db();
+        Database db = new db();
     }
-
 
     @Test
     void printCountriesTestEmpty() {
         ArrayList<Country> countries = new ArrayList<>();
         System.out.println("Testing printCountries with an empty list:");
-        Database.printCountries(countries);  // print header
+        db.printCountries(countries);  // print header
     }
 
     @Test
@@ -27,7 +26,7 @@ class AppTest {
         ArrayList<Country> countries = new ArrayList<>();
         countries.add(null);
         System.out.println("Testing printCountries with a list containing null:");
-        Database.printCountries(countries);  // skip empty
+        db.printCountries(countries);  // skip empty
     }
 
     @Test

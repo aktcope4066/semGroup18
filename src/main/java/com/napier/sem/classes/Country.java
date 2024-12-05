@@ -14,7 +14,7 @@ public class Country {
     private String localName;
     private String governmentForm;
     private String headOfState;
-    private int capital;
+    private String capital;
     private String code2;
 
     /* Constructor
@@ -64,8 +64,8 @@ public class Country {
     public String getHeadOfState() { return headOfState; }
     public void setHeadOfState(String headOfState) { this.headOfState = headOfState; }
 
-    public int getCapital() { return capital; }
-    public void setCapital(int capital) { this.capital = capital; }
+    public String getCapital() { return capital; }
+    public void setCapital(String capital) { this.capital = capital; }
 
     public String getCode2() { return code2; }
     public void setCode2(String code2) { this.code2 = code2; }

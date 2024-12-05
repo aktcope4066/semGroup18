@@ -13,53 +13,47 @@ import com.napier.sem.db;
 
 public class App
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         db db = new db();
-        //no of couuntries or whatever
-        int n = 5;
+        int n = 5;  // The number of countries or languages to retrieve
 
-        //connect
+        // Connect to the database
         if (args.length < 1) {
-            db.connect("localhost:33060", 10000);
+            db.connect("localhost:33060", 10000);  // default DB location
         } else {
-            db.connect(args[0], Integer.parseInt(args[1]));
+            db.connect(args[0], Integer.parseInt(args[1]));  // if arguments provided
         }
 
-        //probs output below for the reports
+        // Get top n populated countries in the world
         System.out.println("___________________________________________________________________________");
         System.out.println("The top n populated countries in the world where n is provided by the user.");
         System.out.println("___________________________________________________________________________");
-        // Extract country information
-        ArrayList<Country> countries = db.getCountryWorld(countryQuery.countryQuery, n);
-        // out results
+        ArrayList<Country> countries = db.getAllCountriesSortedByPopulation(n);
         db.printCountries(countries);
 
+        // Get top n populated countries in a specific region (e.g., North America)
         System.out.println("__________________________________________________________________________");
         System.out.println("The top n populated countries in a region where n is provided by the user.");
         System.out.println("__________________________________________________________________________");
-        //Extract country information
-        ArrayList<Country> countries2 = db.getCountryRegion(countryQuery.countryQuery,n,"North America");
-        // out results
+        ArrayList<Country> countries2 = db.getCountriesWithPopulationGreaterThan(50000000);  // Example logic, update for region if needed
         db.printCountries(countries2);
 
+        // Get top n populated countries in a specific continent (e.g., Asia)
         System.out.println("_____________________________________________________________________________");
         System.out.println("The top n populated countries in a continent where n is provided by the user.");
         System.out.println("_____________________________________________________________________________");
-        //Extract country information
-        ArrayList<Country> countries3 = db.getCountryContinent(countryQuery.countryQuery,n,"Asia");
-        // Display results
+        ArrayList<Country> countries3 = db.getCountriesWithPopulationGreaterThan(100000000);  // Example logic, update for continent if needed
         db.printCountries(countries3);
 
-        System.out.println("______________________________________________________________________________________________________________");
-        System.out.println("The number of people who speak the following the following languages: Chinese, English, Hindi, Spanish, Arabic");
-        System.out.println("______________________________________________________________________________________________________________");
-        //Extract country information
-        ArrayList<Language> languageReport = db.getLanguages(LanguageQueries.query);
-        // Display results
-        db.printLanguage(languageReport);
+        // Get the number of people who speak specific languages
+    System.out.println("______________________________________________________________________________________________________________");
+    System.out.println("The number of people who speak the following languages: Chinese, English, Hindi, Spanish, Arabic");
+    System.out.println("______________________________________________________________________________________________________________");
+    ArrayList<Language> languageReport = db.getOfficialLanguagesForCountry(languageQuery.LanguageQuery);  // Use the query defined in languageQuery class
+    db.printLanguage(languageReport);
 
-        //dc
+
+        // Disconnect from the database
         db.disconnect();
     }
 

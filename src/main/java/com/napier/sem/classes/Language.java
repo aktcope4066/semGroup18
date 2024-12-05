@@ -1,27 +1,27 @@
 package com.napier.sem.classes;
 //Language Class
 public class Language {
-    private String name;
-    private double population;
-    //constructor
-    public Language(String name, double population){
-        this.name = name;
-        this.population = population;
-    }
-    //getters
-    public String getName() {
-        return name;
+    private String countryCode;
+    private String language;
+    private boolean isOfficial;
+    private double percentage;
+
+    // Constructor that accepts language name and speakers percentage
+    public Language(String language, double percentage) {
+        this.language = language;
+        this.percentage = percentage;
     }
 
-    public double getPopulation() {
-        return population;
-    }
-    //setters
-    public void setName(String name) {
-        this.name = name;
-    }
+    // Getters and setters (write them like this from now)
+    public String getCountryCode() { return countryCode; }
+    public void setCountryCode(String countryCode) { this.countryCode = countryCode; }
 
-    public void setPopulation(double population) {
-        this.population = population;
-    }
+    public String getLanguage() { return language; }
+    public void setLanguage(String language) { this.language = language; }
+
+    public boolean isOfficial() { return isOfficial; }
+    public void setOfficial(boolean isOfficial) { this.isOfficial = isOfficial; }
+
+    public double getPercentage() { return percentage; }
+    public void setPercentage(double percentage) { this.percentage = percentage; }
 };
