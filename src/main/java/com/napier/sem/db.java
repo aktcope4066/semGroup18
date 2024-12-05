@@ -62,51 +62,61 @@ public class db {
         ArrayList<Country> countries = new ArrayList<>();
         try {
             // Create an SQL statement
-        Statement stmt = con.createStatement();
-        // Create string for SQL statement
-        String strSelect = baseQuery + " ORDER BY Population DESC";
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect = baseQuery + " ORDER BY Population DESC";
 
-        //if N <= 0 then set no limit
-        if(n>0) {
-            strSelect = strSelect + " LIMIT " + n;
-        }
-        // Execute SQL statement
-        ResultSet rset = stmt.executeQuery(strSelect);
-        //Extract country information
-        //ArrayList<Country> country = new ArrayList<Country>();
-        while (rset.next()) {
-            Country country = new Country();
-            country.setCode(rset.getString("Code"));
-            country.setName(rset.getString("Name"));
-            country.setContinent(rset.getString("Continent"));
-            country.setRegion(rset.getString("Region"));
-            country.setPopulation(rset.getInt("Population"));
-            country.setCapital(rset.getString("Capital"));
-            countries.add(country);
-        }
+            //if N <= 0 then set no limit
+            if(n>0) {
+                strSelect = strSelect + " LIMIT " + n;
+            }
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            //Extract country information
+            //ArrayList<Country> country = new ArrayList<Country>();
+            while (rset.next()) {
+                Country country = new Country();
+                country.setCode(rset.getString("Code"));
+                country.setName(rset.getString("Name"));
+                country.setContinent(rset.getString("Continent"));
+                country.setRegion(rset.getString("Region"));
+                country.setPopulation(rset.getInt("Population"));
+                country.setCapital(rset.getString("Capital"));
+                countries.add(country);
+            }
         } catch (Exception e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
         return countries;
     }
 
     // 2. Retrieve a list of cities sorted by population (Descending)
-    public ArrayList<City> getAllCitiesSortedByPopulation() {
+    public ArrayList<City> getAllCitiesSortedByPopulation(String baseQuery, int n) {
         ArrayList<City> cities = new ArrayList<>();
-        String query = "SELECT city.Name AS city_name, country.Name AS country_name, city.District, city.Population " +
-                       "FROM city JOIN country ON city.CountryCode = country.Code ORDER BY city.Population DESC";
         try {
+            // Create an SQL statement
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                City city = new City();
-                city.setName(rs.getString("city_name"));
-                city.setCountryCode(rs.getString("country_name"));
-                city.setDistrict(rs.getString("District"));
-                city.setPopulation(rs.getInt("Population"));
-                cities.add(city);
+            // Create string for SQL statement
+            String strSelect = baseQuery + " ORDER BY Population DESC";
+
+            //if N <= 0 then set no limit
+            if(n>0) {
+                strSelect = strSelect + " LIMIT " + n;
             }
-        } catch (SQLException e) {
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            //Extract country information
+            //ArrayList<Country> country = new ArrayList<Country>();
+            while (rset.next()) {
+                City City = new City();
+                City.setId(rset.getInt("Code"));
+                City.setName(rset.getString("Name"));
+                City.setCountryCode(rset.getString("Continent"));
+                City.setDistrict(rset.getString("Region"));
+                City.setPopulation(rset.getInt("Population"));
+                cities.add(City);
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return cities;
