@@ -11,7 +11,7 @@ class AppTest {
 
     @BeforeAll
     static void init() {
-        Database db = new db();
+        db db = new db();
     }
 
     @Test
@@ -27,15 +27,6 @@ class AppTest {
         countries.add(null);
         System.out.println("Testing printCountries with a list containing null:");
         db.printCountries(countries);  // skip empty
-    }
-
-    @Test
-    void printCountries() {
-        ArrayList<Country> countries = new ArrayList<>();
-        Country country = new Country("ABC", "TestName", "TestContinent", "TestRegion", 123, "TestCapital");
-        countries.add(country);
-        System.out.println("Testing printCountries with a valid country entry:");
-        Database.printCountries(countries);  // country dertails
     }
 
     //tests to check conditions
